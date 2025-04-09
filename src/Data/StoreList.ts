@@ -1,6 +1,6 @@
-import { Store } from "@/types/Store";
+import { Store } from "../Types/Store";
 
-export const StoreList: Store = [
+export const StoreList: Store[] = [
     {
         id: 1,
         img: '1b6404ff022294b20b709a1d8c047b0a.jpg',

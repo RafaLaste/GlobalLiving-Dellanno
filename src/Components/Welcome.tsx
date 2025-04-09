@@ -29,27 +29,29 @@ const Welcome: React.FC = () => {
             }
         });
 
-        const letters = titleRef.current.querySelectorAll('span');
+        if (titleRef.current) {
+            const letters = titleRef.current.querySelectorAll('span');
 
-        gsap.set(letters, {
-            opacity: 0,
-            rotateY: -90,
-            x: -20,
-        });
+            gsap.set(letters, {
+                opacity: 0,
+                rotateY: -90,
+                x: -20,
+            });
 
-        gsap.to(letters, {
-            opacity: 1,
-            rotateY: 0,
-            x: 0,
-            duration: 0.6,
-            stagger: 0.04,
-            ease: 'back.out(1.7)',
-            scrollTrigger: {
-                trigger: titleRef.current,
-                start: 'top 80%',
-                toggleActions: 'play none none none',
-            },
-        });
+            gsap.to(letters, {
+                opacity: 1,
+                rotateY: 0,
+                x: 0,
+                duration: 0.6,
+                stagger: 0.04,
+                ease: 'back.out(1.7)',
+                scrollTrigger: {
+                    trigger: titleRef.current,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none',
+                },
+            });
+        }
     }, []);
 
     return (
@@ -72,7 +74,7 @@ const Welcome: React.FC = () => {
                     ))}
                 </h2>
 
-                <Reveal className="text-xl text-center leading-relaxed max-w-5xl px-2 mx-auto" direction="bottom" delay="2">
+                <Reveal className="text-xl text-center leading-relaxed max-w-5xl px-2 mx-auto" direction="bottom" delay={2}>
                     <p>
                         Hoje em dia, não importa onde você esteja no mundo, morar com estilo, modernidade e sofisticação é um conceito único. O luxo e o prazer de viver não mudam de um lugar para outro. Compreender isto é desenvolver um design cada vez mais universal e, ao mesmo tempo, autêntico e exclusivo.
                     </p>

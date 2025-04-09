@@ -1,6 +1,6 @@
-import { ImageHighlight } from "@/types/ImageHighlight";
+import { ImageHighlight } from "../Types/ImageHighlight";
 
-export const ImageHighlightList: ImageHighlight = [
+export const ImageHighlightList: ImageHighlight[] = [
     {
         id: 1,
         img: '57b491f0dab1d6400cd711bfa9841b89.jpg',

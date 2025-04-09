@@ -1,4 +1,4 @@
-import { ImageHighlight } from "@/types/ImageHighlight";
+import { ImageHighlight } from "../Types/ImageHighlight";
 
 import HoverImage from './HoverImage';
 

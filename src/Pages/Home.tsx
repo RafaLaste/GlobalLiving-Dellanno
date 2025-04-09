@@ -1,9 +1,5 @@
-import { useEffect, useRef } from 'react'
-import PhotoSwipeLightbox from 'photoswipe/lightbox'
-import 'photoswipe/style.css'
-
-import { ImageGalleryList } from '../data/ImageGalleryList'
-import { ImageHighlightList } from '../data/ImageHighlightList'
+import { ImageGalleryList } from '../Data/ImageGalleryList'
+import { ImageHighlightList } from '../Data/ImageHighlightList'
 
 import DefaultLayout from '../Layouts/DefaultLayout';
 

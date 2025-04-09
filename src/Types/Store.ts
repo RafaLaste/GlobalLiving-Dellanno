@@ -1,5 +1,5 @@
 export type Store = {
-    id: integer;
-    name: string;
+    id: number;
+    nome: string;
     img: string;
 }

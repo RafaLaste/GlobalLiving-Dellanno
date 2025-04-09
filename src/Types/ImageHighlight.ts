@@ -1,5 +1,5 @@
 export type ImageHighlight = {
-    id: integer;
+    id: number;
     img: string;
-    store: Store;
+    storeId: number;
 }

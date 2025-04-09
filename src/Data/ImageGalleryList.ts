@@ -1,4 +1,4 @@
-import { ImageGallery } from "@/types/ImageGallery";
+import { ImageGallery } from "../Types/ImageGallery";
 
 export const ImageGalleryList: ImageGallery[] = [
     {

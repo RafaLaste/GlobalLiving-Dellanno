@@ -1,4 +1,4 @@
-import { Store } from "@/types/Store";
+import { Store } from "../Types/Store";
 
 import { ImageGalleryList } from "../Data/ImageGalleryList";
 import { ImageHighlightList } from "../Data/ImageHighlightList";
@@ -26,7 +26,7 @@ const StoreItem: React.FC<StoreItemProps> = ({ item }) => {
                     />
                 </Reveal>
 
-                <Reveal className="w-1/3 pr-[15%]" direction="left" delay="4">
+                <Reveal className="w-1/3 pr-[15%]" direction="left" delay={4}>
                     <h3
                         className="relative pl-20 pt-10 text-2xl font-semibold uppercase mb-4 before:absolute before:left-0 before:top-0 before:w-1/2 before:h-px before:bg-black"
                         dangerouslySetInnerHTML={{ __html: `Dell Anno<br>${item.nome}` }}

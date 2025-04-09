@@ -42,27 +42,26 @@ export default function DefaultLayout({
         document.head.appendChild(style);
     }, []);
 
-    const lenisRef = useRef(null);
+    const lenisRef = useRef<Lenis | null>(null);
 
     useEffect(() => {
         lenisRef.current = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: 'vertical',
-            smooth: true,
-            smoothTouch: false,
         });
 
-        function raf(time) {
-            lenisRef.current.raf(time);
+        function raf(time: number) {
+            lenisRef.current?.raf(time);
             requestAnimationFrame(raf);
         }
 
         requestAnimationFrame(raf);
 
-        return () => {
-            lenisRef.current.destroy();
-        };
+        if (lenisRef.current) {
+            return () => {
+                lenisRef.current?.destroy();
+            };
+        }
     }, []);
 
     return (

@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import bgPattern from '../assets/img/bg-pattern.jpg';
 import eyeIcon from '../assets/img/eye-icon.png';
 
-import { ImageGallery } from "@/types/ImageGallery";
+import { ImageGallery } from "../Types/ImageGallery";
 
 import { Reveal } from './Reveal';
 
