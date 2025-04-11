@@ -24,6 +24,7 @@ const ShowroomVideo: React.FC = () => {
                     ref={videoRef}
                     className="w-full h-auto"
                     src="/content/videos/video-showroom.webm"
+                    poster="/content/display/6a0c178d672f54a8ac36e3a73b6b503f.jpg"
                 />
 
                 <button
