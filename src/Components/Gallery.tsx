@@ -62,13 +62,13 @@ const Gallery: React.FC<GalleryProps> = ({ images, withBackground }) => {
     return (
         <section
             ref={bgRef}
-            className={`py-24 bg-no-repeat ${withBackground ? 'bg-cover bg-center' : ''}`}
+            className={`py-10 md:py-16 xl:py-24 bg-no-repeat ${withBackground ? 'bg-cover bg-center' : ''}`}
             style={withBackground ? {
                 backgroundImage: `url(${bgPattern})`
             } : {}}
         >
-            <div className="container max-w-medium">
-                <div ref={galleryRef} className="grid grid-cols-2 gap-8">
+            <div className="md:container md:max-w-medium">
+                <div ref={galleryRef} className="grid grid-cols-2 gap-2 xl:gap-8">
                     {images.map((image, index) => (
                         <Reveal key={index} direction="bottom">
                             <a
@@ -78,7 +78,7 @@ const Gallery: React.FC<GalleryProps> = ({ images, withBackground }) => {
                                 data-pswp-height="1050"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="group relative aspect-square overflow-hidden transition-all hover:shadow block"
+                                className="group relative aspect-[0.8] md:aspect-square overflow-hidden transition-all hover:shadow block"
                             >
                                 <img
                                     src={`/content/gallery/${image.img}`}

@@ -32,14 +32,14 @@ const AnotherImage: React.FC = () => {
     return (
         <section
             ref={bgRef}
-            className="py-40 bg-cover bg-center"
+            className="max-sm:mb-16 sm:py-30 md:py-40 bg-cover bg-center"
             style={{
                 backgroundImage: `url(${bgPattern})`,
             }}
         >   
-            <div className="container max-w-[87rem]">
+            <div className="md:container max-w-[87rem]">
                 <Reveal direction="top">
-                    <img src={`/content/display/07aa51406be467f21e3766848ba16d20.jpg`} />
+                    <img src={`/content/display/ff7768b9f5ec306a87c8bd6020c3cba0.jpg`} />
                 </Reveal>
             </div>
         </section>

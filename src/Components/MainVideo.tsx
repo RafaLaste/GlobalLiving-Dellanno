@@ -1,14 +1,9 @@
-import React from 'react';
-
-import videoDesktop from '../assets/videos/video-desktop.mp4';
-import videoMobile from '../assets/videos/video-mobile.mp4';
-
 const MainVideo: React.FC = () => {
     return (
         <section className="relative w-full h-auto overflow-hidden">
             <video
                 className="hidden md:block w-full h-auto object-cover"
-                src={videoDesktop}
+                src="/content/videos/video-desktop.mp4"
                 autoPlay
                 muted
                 loop
@@ -17,7 +12,7 @@ const MainVideo: React.FC = () => {
 
             <video
                 className="block md:hidden w-full h-auto object-cover"
-                src={videoMobile}
+                src="/content/videos/video-mobile.mp4"
                 autoPlay
                 muted
                 loop

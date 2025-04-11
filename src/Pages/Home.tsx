@@ -9,6 +9,7 @@ import Welcome from '../Components/Welcome';
 import Gallery from '../Components/Gallery';
 import Highlights from '../Components/Highlights';
 import AnotherImage from '../Components/AnotherImage';
+import UniverseImage from '../Components/UniverseImage';
 import Stores from '../Components/Stores';
 
 const Page: React.FC = () => {
@@ -27,11 +28,11 @@ const Page: React.FC = () => {
 
             <Gallery images={generalImages} withBackground={true} />
 
-            <Highlights images={generalHighlights} />
+            <Highlights images={generalHighlights} withBackground={true} />
 
             <AnotherImage />
 
-            <img src={`/content/display/b0dda63c84ca2ced8ad684a9c77b2e02.jpg`} />
+            <UniverseImage />
 
             <Stores />
         </DefaultLayout>

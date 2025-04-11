@@ -29,9 +29,9 @@ const Welcome: React.FC = () => {
             }
         });
 
-        if (titleRef.current) {
-            const letters = titleRef.current.querySelectorAll('span');
+        const letters = titleRef.current?.querySelectorAll('span span');
 
+        if (letters) {
             gsap.set(letters, {
                 opacity: 0,
                 rotateY: -90,
@@ -57,7 +57,7 @@ const Welcome: React.FC = () => {
     return (
         <section
             ref={bgRef}
-            className="pt-50 pb-40 bg-cover bg-center"
+            className="pt-20 sm:pt-30 md:pt-40 2xl:pt-50 pb-20 sm:pb-30 xl:pb-40 bg-cover bg-center"
             style={{
                 backgroundImage: `url(${bgPattern})`,
             }}
@@ -65,16 +65,20 @@ const Welcome: React.FC = () => {
             <div className="container max-w-large">
                 <h2
                     ref={titleRef}
-                    className="text-3xl font-medium uppercase text-center mb-10 flex justify-center flex-wrap"
+                    className="text-2xl md:text-3xl font-medium uppercase text-center mb-5 xl:mb-10 flex justify-center flex-wrap"
                 >
-                    {'Descubra o Dell Anno Global Living'.split('').map((char, i) => (
-                        <span key={i} className="inline-block whitespace-pre">
-                            {char}
+                    {'Descubra o Dell Anno Global Living'.split(' ').map((word, i) => (
+                        <span key={i} className="inline-block mr-2 whitespace-nowrap">
+                            {word.split('').map((char, j) => (
+                                <span key={j} className="inline-block">
+                                    {char}
+                                </span>
+                            ))}
                         </span>
                     ))}
                 </h2>
 
-                <Reveal className="text-xl text-center leading-relaxed max-w-5xl px-2 mx-auto" direction="bottom" delay={2}>
+                <Reveal className="md:text-xl text-center leading-relaxed max-w-5xl px-2 mx-auto" direction="bottom" delay={2}>
                     <p>
                         Hoje em dia, não importa onde você esteja no mundo, morar com estilo, modernidade e sofisticação é um conceito único. O luxo e o prazer de viver não mudam de um lugar para outro. Compreender isto é desenvolver um design cada vez mais universal e, ao mesmo tempo, autêntico e exclusivo.
                     </p>
