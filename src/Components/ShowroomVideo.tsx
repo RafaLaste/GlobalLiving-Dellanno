@@ -23,9 +23,7 @@ const ShowroomVideo: React.FC = () => {
                 <video
                     ref={videoRef}
                     className="w-full h-auto"
-                    src="/content/videos/showroom.mp4"
-                    muted
-                    loop
+                    src="/content/videos/video-showroom.webm"
                 />
 
                 <button
