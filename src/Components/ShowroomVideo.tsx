@@ -93,7 +93,7 @@ const ShowroomVideo: React.FC = () => {
                     ))}
                 </h2>
 
-                <Reveal className="relative mb-14 md:mb-20" direction="bottom">
+                <Reveal className="group relative mb-14 md:mb-20" direction="bottom">
                     <video
                         ref={videoRef}
                         className="w-full h-auto"
@@ -101,14 +101,16 @@ const ShowroomVideo: React.FC = () => {
                         poster="/content/display/6a0c178d672f54a8ac36e3a73b6b503f.jpg"
                     />
 
+                    <div className="absolute inset-0 bg-black opacity-0 transition-all group-hover:opacity-20" />
+
                     <button
                         onClick={togglePlayPause}
-                        className="absolute bottom-4 -right-4 md:translate-x-full z-10"
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
                     >
                         <img
                             src={isPlaying ? pauseIcon : playIcon}
                             alt={isPlaying ? "Pause" : "Play"}
-                            className="w-10 h-10"
+                            className={`${isPlaying ? 'opacity-0 group-hover:opacity-50 ' : ''}shadow rounded-full transition-all group-hover:scale-110`}
                         />
                     </button>
                 </Reveal>
