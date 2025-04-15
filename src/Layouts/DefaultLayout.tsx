@@ -19,7 +19,7 @@ export default function DefaultLayout({
     description = 'O luxo e o prazer de viver não mudam de um lugar para outro.',
 }: DefaultLayoutProps) {
     const [notifyCookie, setNotifyCookie] = useState(false);
-    const [trackingEnabled, setTrackingEnabled] = useState(false);
+    // const [trackingEnabled, setTrackingEnabled] = useState(false);
     const lenisRef = useRef<Lenis | null>(null);
 
     useEffect(() => {

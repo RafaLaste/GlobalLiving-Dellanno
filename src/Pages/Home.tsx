@@ -14,8 +14,8 @@ import Quote from '../Components/Quote';
 import Stores from '../Components/Stores';
 
 const Page: React.FC = () => {
-    const generalImages = ImageGalleryList.filter(img => img.storeId === 0)
-    const generalHighlights = ImageHighlightList.filter(img => img.storeId === 0)
+    // const generalImages = ImageGalleryList.filter(img => img.storeId === 0)
+    // const generalHighlights = ImageHighlightList.filter(img => img.storeId === 0)
 
     return (
         <DefaultLayout>
