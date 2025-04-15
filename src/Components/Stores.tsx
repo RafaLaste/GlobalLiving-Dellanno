@@ -99,11 +99,11 @@ const Stores: React.FC = () => {
             ))}
 
 
-            <footer className="py-20 sm:py-30">
+            <footer className="pt-10 pb-20 sm:pb-36">
                 <div className="container max-w-large">
-                    <img src={logo} className="block mx-auto mb-16 max-w-40" alt="Dell Anno" />
+                    <img src={logo} className="block mx-auto mb-8 max-w-40" alt="Dell Anno" />
 
-                    <div className="flex gap-2 justify-center">
+                    <div className="flex gap-2 justify-center scale-90">
                         <a href="http://instagram.com/dellannooficial" className="bg-black w-10 h-10 flex items-center justify-center transition-all hover:opacity-80">
                             <img src={Instagram} alt="Instagram" />
                         </a>

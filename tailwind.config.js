@@ -29,6 +29,15 @@ export default {
                 '40': '9.375rem',
                 '50': '12.5rem',
             },
+            keyframes: {
+                'fade-out-down': {
+                    '0%': { opacity: '1', transform: 'none' },
+                    '100%': { opacity: '0', transform: 'translate3d(0, 100px,0)' },
+                }
+            },
+            animation: {
+                'fade-out-down': 'fade-out-down 200ms linear'
+            },
         },
     },
     plugins: [

@@ -5,11 +5,12 @@ import DefaultLayout from '../Layouts/DefaultLayout';
 
 import MainVideo from '../Components/MainVideo';
 import ShowroomVideo from '../Components/ShowroomVideo';
-import Welcome from '../Components/Welcome';
-import Gallery from '../Components/Gallery';
-import Highlights from '../Components/Highlights';
-import AnotherImage from '../Components/AnotherImage';
-import UniverseImage from '../Components/UniverseImage';
+import Quote from '../Components/Quote';
+// import Welcome from '../Components/Welcome';
+// import Gallery from '../Components/Gallery';
+// import Highlights from '../Components/Highlights';
+// import AnotherImage from '../Components/AnotherImage';
+// import UniverseImage from '../Components/UniverseImage';
 import Stores from '../Components/Stores';
 
 const Page: React.FC = () => {
@@ -22,7 +23,9 @@ const Page: React.FC = () => {
 
             <ShowroomVideo />
 
-            <Welcome />
+            <Quote />
+
+            {/* <Welcome />
 
             <img src={`/content/display/07aa51406be467f21e3766848ba16d20.jpg`} />
 
@@ -32,7 +35,7 @@ const Page: React.FC = () => {
 
             <AnotherImage />
 
-            <UniverseImage />
+            <UniverseImage /> */}
 
             <Stores />
         </DefaultLayout>

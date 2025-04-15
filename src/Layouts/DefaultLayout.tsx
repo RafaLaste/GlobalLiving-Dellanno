@@ -1,10 +1,11 @@
-import { ReactNode, useEffect, useRef } from 'react';
-
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import Lenis from 'lenis';
 
 import ApercuPro from '../assets/fonts/ApercuPro.woff2';
 import ApercuProMedium from '../assets/fonts/ApercuPro-Medium.woff2';
 import ApercuProBold from '../assets/fonts/ApercuPro-Bold.woff2';
+
+import { CookieModal } from '../Components/CookieModal';
 
 interface DefaultLayoutProps {
     children: ReactNode;
@@ -17,6 +18,10 @@ export default function DefaultLayout({
     title = 'Global Living | Dell Anno',
     description = 'O luxo e o prazer de viver não mudam de um lugar para outro.',
 }: DefaultLayoutProps) {
+    const [notifyCookie, setNotifyCookie] = useState(false);
+    const [trackingEnabled, setTrackingEnabled] = useState(false);
+    const lenisRef = useRef<Lenis | null>(null);
+
     useEffect(() => {
         const style = document.createElement('style');
         style.innerHTML = `
@@ -42,8 +47,6 @@ export default function DefaultLayout({
         document.head.appendChild(style);
     }, []);
 
-    const lenisRef = useRef<Lenis | null>(null);
-
     useEffect(() => {
         lenisRef.current = new Lenis({
             duration: 1.2,
@@ -57,12 +60,50 @@ export default function DefaultLayout({
 
         requestAnimationFrame(raf);
 
-        if (lenisRef.current) {
-            return () => {
-                lenisRef.current?.destroy();
-            };
-        }
+        return () => {
+            lenisRef.current?.destroy();
+        };
     }, []);
+
+    const acceptCookies = () => {
+        setTrackingEnabled(true);
+    };
+
+    useEffect(() => {
+        const notify = document.cookie
+            .split('; ')
+            .some((cookie) => cookie.startsWith('notify-cookies=1'));
+        setNotifyCookie(notify);
+    }, []);
+
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         if (notifyCookie || trackingEnabled) {
+    //             const script = document.createElement('script');
+    //             script.innerHTML = `
+    //                 (function(w,d,s,l,i){
+    //                     w[l]=w[l]||[];
+    //                     w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    //                     var f=d.getElementsByTagName(s)[0],
+    //                         j=d.createElement(s),
+    //                         dl=l!='dataLayer'?'&l='+l:'';
+    //                     j.async=true;
+    //                     j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    //                     f.parentNode.insertBefore(j,f);
+    //                 })(window,document,'script','dataLayer','${dados_site.tag_google}');
+    //             `;
+    //             document.head.appendChild(script);
+
+    //             const noscript = document.createElement('noscript');
+    //             noscript.innerHTML = `
+    //                 <iframe src="https://www.googletagmanager.com/ns.html?id=${dados_site.tag_google}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    //             `;
+    //             document.body.appendChild(noscript);
+    //         }
+    //     }, 100);
+
+    //     return () => clearTimeout(timer);
+    // }, [notifyCookie, trackingEnabled]);
 
     return (
         <>
@@ -82,7 +123,16 @@ export default function DefaultLayout({
             <meta name="twitter:description" content={description || ''} />
             <meta name="twitter:image" content="/assets/preview.jpg" />
 
-            <main className="min-h-screen font-primary">{children}</main>
+            <main className="min-h-screen font-primary overflow-hidden">
+                {children}
+            </main>
+
+            {!notifyCookie && (
+                <CookieModal
+                    acceptCookies={acceptCookies}
+                    visible={true}
+                />
+            )}
         </>
     );
 }

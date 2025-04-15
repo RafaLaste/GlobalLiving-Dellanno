@@ -35,13 +35,13 @@ const HoverImage: React.FC<{ src: string; alt?: string }> = ({ src, alt = '' }) 
             ref={containerRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative aspect-[200/187] overflow-hidden"
+            className="relative aspect-[200/160] overflow-hidden"
         >
             <img
                 ref={imageRef}
                 src={`/content/highlights/${src}`}
                 alt={alt}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none w-[130%] max-w-[130%] h-[130%] object-cover"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none w-[112%] max-w-[112%] h-[112%] object-cover"
                 draggable={false}
             />
         </div>
