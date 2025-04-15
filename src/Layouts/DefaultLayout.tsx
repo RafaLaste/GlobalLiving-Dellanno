@@ -19,7 +19,7 @@ export default function DefaultLayout({
     description = 'O luxo e o prazer de viver não mudam de um lugar para outro.',
 }: DefaultLayoutProps) {
     const [notifyCookie, setNotifyCookie] = useState(false);
-    // const [trackingEnabled, setTrackingEnabled] = useState(false);
+    const [trackingEnabled, setTrackingEnabled] = useState(false);
     const lenisRef = useRef<Lenis | null>(null);
 
     useEffect(() => {
@@ -66,7 +66,7 @@ export default function DefaultLayout({
     }, []);
 
     const acceptCookies = () => {
-        // setTrackingEnabled(true);
+        setTrackingEnabled(true);
     };
 
     useEffect(() => {
@@ -76,34 +76,66 @@ export default function DefaultLayout({
         setNotifyCookie(notify);
     }, []);
 
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         if (notifyCookie || trackingEnabled) {
-    //             const script = document.createElement('script');
-    //             script.innerHTML = `
-    //                 (function(w,d,s,l,i){
-    //                     w[l]=w[l]||[];
-    //                     w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-    //                     var f=d.getElementsByTagName(s)[0],
-    //                         j=d.createElement(s),
-    //                         dl=l!='dataLayer'?'&l='+l:'';
-    //                     j.async=true;
-    //                     j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-    //                     f.parentNode.insertBefore(j,f);
-    //                 })(window,document,'script','dataLayer','${dados_site.tag_google}');
-    //             `;
-    //             document.head.appendChild(script);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (notifyCookie || trackingEnabled) {
+                // Google Tag Manager
+                const gtmScript = document.createElement('script');
+                gtmScript.innerHTML = `
+                    (function(w,d,s,l,i){
+                        w[l]=w[l]||[];
+                        w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+                        var f=d.getElementsByTagName(s)[0],
+                            j=d.createElement(s),
+                            dl=l!='dataLayer'?'&l='+l:'';
+                        j.async=true;
+                        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                        f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','GTM-MLRF8T2');
+                `;
+                document.head.appendChild(gtmScript);
 
-    //             const noscript = document.createElement('noscript');
-    //             noscript.innerHTML = `
-    //                 <iframe src="https://www.googletagmanager.com/ns.html?id=${dados_site.tag_google}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    //             `;
-    //             document.body.appendChild(noscript);
-    //         }
-    //     }, 100);
+                const gtagScript = document.createElement('script');
+                gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-812340317';
+                gtagScript.async = true;
+                document.head.appendChild(gtagScript);
 
-    //     return () => clearTimeout(timer);
-    // }, [notifyCookie, trackingEnabled]);
+                const gtagInit = document.createElement('script');
+                gtagInit.innerHTML = `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'AW-812340317');
+                `;
+                document.head.appendChild(gtagInit);
+
+                const conversionScript = document.createElement('script');
+                conversionScript.innerHTML = `
+                    function gtag_report_conversion(url) {
+                        var callback = function () {
+                            if (typeof(url) != 'undefined') {
+                                window.location = url;
+                            }
+                        };
+                        gtag('event', 'conversion', {
+                            'send_to': 'AW-812340317/cImPCO7O4bIDEN2orYMD',
+                            'event_callback': callback
+                        });
+                        return false;
+                    }
+                `;
+                document.head.appendChild(conversionScript);
+
+                const noscript = document.createElement('noscript');
+                noscript.innerHTML = `
+                    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLRF8T2" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+                `;
+                document.body.appendChild(noscript);
+            }
+        }, 100);
+
+        return () => clearTimeout(timer);
+    }, [notifyCookie, trackingEnabled]);
 
     return (
         <>
