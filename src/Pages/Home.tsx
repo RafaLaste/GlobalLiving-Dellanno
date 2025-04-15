@@ -1,5 +1,5 @@
-import { ImageGalleryList } from '../Data/ImageGalleryList'
-import { ImageHighlightList } from '../Data/ImageHighlightList'
+// import { ImageGalleryList } from '../Data/ImageGalleryList'
+// import { ImageHighlightList } from '../Data/ImageHighlightList'
 
 import DefaultLayout from '../Layouts/DefaultLayout';
 

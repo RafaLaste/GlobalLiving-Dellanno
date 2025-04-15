@@ -66,7 +66,7 @@ export default function DefaultLayout({
     }, []);
 
     const acceptCookies = () => {
-        setTrackingEnabled(true);
+        // setTrackingEnabled(true);
     };
 
     useEffect(() => {
