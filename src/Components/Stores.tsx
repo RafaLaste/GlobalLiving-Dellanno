@@ -104,19 +104,19 @@ const Stores: React.FC = () => {
                     <img src={logo} className="block mx-auto mb-8 max-w-40" alt="Dell Anno" />
 
                     <div className="flex gap-2 justify-center scale-90">
-                        <a href="http://instagram.com/dellannooficial" className="bg-black w-10 h-10 flex items-center justify-center transition-all hover:opacity-80">
+                        <a href="https://instagram.com/dellannooficial" className="bg-black w-10 h-10 flex items-center justify-center transition-all hover:opacity-80">
                             <img src={Instagram} alt="Instagram" />
                         </a>
 
-                        <a href="http://instagram.com/dellannooficial" className="bg-black w-10 h-10 flex items-center justify-center transition-all hover:opacity-80">
+                        <a href="https://www.facebook.com/DellAnnoOficial/" className="bg-black w-10 h-10 flex items-center justify-center transition-all hover:opacity-80">
                             <img src={Facebook} alt="Facebook" />
                         </a>
 
-                        <a href="http://instagram.com/dellannooficial" className="bg-black w-10 h-10 flex items-center justify-center transition-all hover:opacity-80">
+                        <a href="https://br.pinterest.com/dellanno/" className="bg-black w-10 h-10 flex items-center justify-center transition-all hover:opacity-80">
                             <img src={Pinterest} alt="Pinterest" />
                         </a>
 
-                        <a href="http://instagram.com/dellannooficial" className="bg-black w-10 h-10 flex items-center justify-center transition-all hover:opacity-80">
+                        <a href="https://www.youtube.com/c/DellAnnoOficial" className="bg-black w-10 h-10 flex items-center justify-center transition-all hover:opacity-80">
                             <img src={Youtube} alt="Youtube" />
                         </a>
                     </div>
