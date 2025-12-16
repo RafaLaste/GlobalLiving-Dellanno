@@ -5,7 +5,7 @@ import DefaultLayout from '../Layouts/DefaultLayout';
 
 import MainVideo from '../Components/MainVideo';
 import ShowroomVideo from '../Components/ShowroomVideo';
-import Quote from '../Components/Quote';
+// import Quote from '../Components/Quote';
 // import Welcome from '../Components/Welcome';
 // import Gallery from '../Components/Gallery';
 // import Highlights from '../Components/Highlights';
