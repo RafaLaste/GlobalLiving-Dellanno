@@ -23,9 +23,9 @@ const Page: React.FC = () => {
 
             <ShowroomVideo />
 
-            <Quote />
+            {/* <Quote />
 
-            {/* <Welcome />
+            <Welcome />
 
             <img src={`/content/display/07aa51406be467f21e3766848ba16d20.jpg`} />
 

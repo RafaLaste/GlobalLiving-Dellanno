@@ -97,7 +97,7 @@ const ShowroomVideo: React.FC = () => {
                     <video
                         ref={videoRef}
                         className="w-full h-auto"
-                        src="/content/videos/video-showroom.webm"
+                        src="/content/videos/video-showroom.mp4"
                         poster="/content/display/6a0c178d672f54a8ac36e3a73b6b503f.jpg"
                     />
 
