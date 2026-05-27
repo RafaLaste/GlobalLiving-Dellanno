@@ -1,54 +1,96 @@
-# React + TypeScript + Vite
+<div align="center">
+  <h1>Global Living - Dell Anno</h1>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **Global Living** é um projeto desenvolvido com foco na campanha de globalização da marca **Dell Anno**, referência global em móveis planejados de alto padrão.
+  
+---
 
-Currently, two official plugins are available:
+## Índice
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Sobre](#sobre)
+- [Visualização](#visualizacao)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Arquitetura do Projeto](#arquitetura-do-projeto)
+- [Como Executar o Projeto](#como-executar-o-projeto)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<h2 id="sobre">Sobre:</h2>
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+A proposta do projeto explora o conceito de vida global, destacando a presença da marca em diferentes contextos. Como estudo de caso, foram analisadas as unidades de **São Paulo** e **Nova York**, evidenciando como a identidade da marca se adapta e se mantém consistente em mercados distintos.
+
+---
+
+
+<h2 id="visualizacao">Visualização:</h2>
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/9d92feea-226a-46a9-986a-43cbfa223d7a" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/5b75632e-848b-4cf8-9b21-cfe3afad92b2" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/06367ba6-74bb-404e-a575-b0b50e90f943" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/a0ce5162-7a80-4c04-ac80-44a9f5a570b9" />
+
+---
+
+<h2 id="tecnologias-utilizadas">Tecnologias Utilizadas:</h2>
+
+### Front-end:
+- **React (^19.0.0)**: biblioteca para construção de interfaces de usuário baseadas em componentes
+- **TypeScript (~5.7.2)**: adiciona tipagem estática ao JavaScript, aumentando a segurança e manutenção do código
+- **Vite (^6.2.0)**: ferramenta de build e ambiente de desenvolvimento rápido
+
+### Estilização:
+- **Tailwind CSS (3.4)**: framework utilitário para estilização rápida e responsiva
+- **PostCSS (^8.5.3)**: processador de CSS utilizado em conjunto com Tailwind
+- **Autoprefixer (^10.4.21)**: adiciona automaticamente prefixos CSS para compatibilidade entre navegadores
+
+### UI e experiência do usuário:
+- **GSAP (^3.12.7)**: biblioteca para criação de animações avançadas
+- **Lenis (^1.2.3)**: implementação de rolagem suave (smooth scrolling)
+- **PhotoSwipe (^5.4.4)**: galeria de imagens e lightboxes
+
+---
+
+<h2 id="arquitetura-do-projeto">Arquitetura principal do Projeto:</h2>
+
+```bash
+GlobalLiving-Dellanno
+│
+├── public             # Arquivos públicos servidos diretamente
+├── src                # Pasta principal
+│   ├── Components     # Componentes responsáveis pela construção da interface 
+│   ├── Data           # Lista com conteúdos estáticos para os componentes (imagens)
+│   ├── Layouts        # Estruturas que definem o padrão das páginas
+│   ├── Types          # Tipagens compartilhadas entre componentes
+│   ├── assets         # Recursos estáticos utilizados na interface
+│   ├── pages          # Páginas principais do site
+├── App.tsx            # Responsável por centralizar rotas e contexts
+├── index.css          # Arquivo global de estilos
+├── main.tsx           # Ponto de entrada do projeto React
+│
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+<h2 id="como-executar-o-projeto">Como Executar o Projeto:</h2>
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/RafaLaste/GlobalLiving-Dellanno.git
+cd GlobalLiving-Dellanno
 ```
+
+2. Instale as dependências:
+
+```bash
+npm install
+```
+
+3. Rode o projeto:
+```bash
+npm run dev
+```
+
+
