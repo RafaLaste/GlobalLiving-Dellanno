@@ -25,10 +25,10 @@ A proposta do projeto explora o conceito de vida global, destacando a presença 
 
 <h2 id="visualizacao">Visualização:</h2>
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/9d92feea-226a-46a9-986a-43cbfa223d7a" />
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/5b75632e-848b-4cf8-9b21-cfe3afad92b2" />
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/06367ba6-74bb-404e-a575-b0b50e90f943" />
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/a0ce5162-7a80-4c04-ac80-44a9f5a570b9" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/9d92feea-226a-46a9-986a-43cbfa223d7a" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/5b75632e-848b-4cf8-9b21-cfe3afad92b2" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/06367ba6-74bb-404e-a575-b0b50e90f943" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/a0ce5162-7a80-4c04-ac80-44a9f5a570b9" />
 
 ---
 
